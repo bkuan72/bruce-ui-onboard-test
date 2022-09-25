@@ -23,12 +23,12 @@ myValue("dog");
 
 <br>
 
-- "What is $blade or $component in HTML?"
+- "What is $component in HTML?"
 
 These are variables that define scope.
-If you are working inside a blade, then you can access the blade's data through $blade, likewise for components.
+If you are working inside a component, then you can access the component's data $component.
 
-If you have data within your blade called "myValue" then you would access it with `$blade.myValue` in HTML.
+If you have data within your component called "myValue" then you would access it with `$component.myValue` in HTML.
 
 If you are working within a for loop in HTML, then the loop elements are accessed with `$data`.
 
@@ -133,8 +133,6 @@ const myValue = "cat";
 <br>
 
 - "How can I detect click-events on things?"
-
-Assuming this is within a component (refer to $blade and $component from earlier for how to do the other).
 
 Eg:
 ```typescript

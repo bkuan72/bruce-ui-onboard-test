@@ -21,13 +21,20 @@ All commands are run in CMD in the project folder.
 ## Debugging
 
 After building your project run `gulp watch` for changes to automatically be detected.
+
 This saves completely rebuilding the project.
 
+<br>
+
 You cannot click on the index.html file from the compiled folder to debug your work.
+
 You have to serve the content from a server.
 
+<br>
+
 I recommend the `live server` extension available in Visual Store Code extensions.
-Link to extension: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&ssr=false#overview
+
+- https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&ssr=false#overview
 
 After installing the extension, right-click on the index.html file in the public folder and select "Open with Live Server".
 
