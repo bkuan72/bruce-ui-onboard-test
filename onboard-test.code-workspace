@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"node_modules": true,
+			"dist": true,
+			"tmp": true,
+			".vscode": true,
+			".gitignore": true,
+			"bitbucket-pipelines.yml": true,
+			"gulpfile.js": true,
+			"infra.yaml": true,
+			"package-lock.json": true,
+			"package.json": false,
+			"tsconfig.json": true,
+			"src/typescript-defs.d.ts": true,
+			".fleet": true,
+			".eslintrc.js": true
+		},
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		},
+		"cSpell.words": [
+			"Hypeportal",
+			"Nextspace"
+		],
+	}
+}
