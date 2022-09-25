@@ -13,12 +13,17 @@ Alongside the (JSON) data, an entity can have attached information such as pictu
 Entities are grouped through "entity types", these types have a schema which describes the expectation of what the data should be within that type.
 Think of it like a stencil that is put onto the arbitrary entity data.
 
+<br>
+
 The entity type not only describes how the data should be layed out, but also what each attribute should be.
 
 An attribute can be:
+
 - Marked to be a certain type, for example a "string" or "integer".
+
 - Marked to be "important".
   - This means "show me this data when presenting a dialog, hide the rest unless something is clicked to reveal it".
+
 - Marked to be "indexed".
   - This means this attribute can be used as part of a search criteria.
 
