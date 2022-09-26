@@ -1,4 +1,14 @@
 <div id="APP_TEST_ENTITY_DATA_VIEWER">
+    <div class="bookmark-row">
+        <label>Rendered Data</label>
+        <select 
+            data-bind="
+                options: $component.Bookmarks,
+                value: $component.SelectedBookmark,
+                optionsText: 'Title'">
+        </select>
+    </div>
+
     <!-- ko if: $component.SelectedEntity() -->
         <div class="entity-details">
             <!-- ko if: $component.SelectedData() -->

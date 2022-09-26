@@ -2,7 +2,7 @@ import * as html from "./app-test-entity-data.html";
 import "./app-test-entity-data.css";
 
 import { IAbstractComponentParams, Component, AbstractComponent } from "../../common/decorator/component";
-import { BruceCesium, BruceInfo, CesiumBruceEntity, CesiumMouseEvents, CesiumUtils, ClientFile, EEnvironmentType, EntityAttachment, EntityType } from "bruce-maps-widget";
+import { BruceCesium, BruceInfo, CesiumBruceEntity, CesiumMouseEvents, CesiumUtils, ClientFile, EEnvironmentType, EntityAttachment, EntityType, ProjectViewBookmark } from "bruce-maps-widget";
 import * as Cesium from "cesium";
 
 export interface IAppTestEntityDataParams extends IAbstractComponentParams {
@@ -11,11 +11,9 @@ export interface IAppTestEntityDataParams extends IAbstractComponentParams {
 
 const VIEWER_CONTAINER_ID = "APP_TEST_ENTITY_DATA_VIEWER";
 
-// TODO: Get a better bookmark for this.
-const ACCOUNT_ID = "mush";
+const ACCOUNT_ID = "onboarding";
 const ENV = EEnvironmentType.STAGING;
-const TEST_VIEW_ID = "Points7d2f";
-const TEST_BOOKMARK_ID = "0b0a0c07-b034-4319-9aa1-efa01e30d210";
+const TEST_VIEW_ID = "TestRenderEntityData2ca2010";
 
 interface IEntityData {
     record: BruceInfo;
@@ -27,7 +25,9 @@ interface IEntityData {
 @Component({ name: "app-test-entity-data", template: html })
 export class AppTestEntityData extends AbstractComponent<IAppTestEntityDataParams> {
     private viewer: BruceCesium.Viewer;
-    
+
+    public Bookmarks: KnockoutObservable<ProjectViewBookmark[]> = ko.observable([]);
+    public SelectedBookmark: KnockoutObservable<ProjectViewBookmark> = ko.observable();
     public SelectedEntity: KnockoutObservable<CesiumBruceEntity> = ko.observable();
     public SelectedData: KnockoutObservable<IEntityData> = ko.observable();
 
@@ -36,6 +36,9 @@ export class AppTestEntityData extends AbstractComponent<IAppTestEntityDataParam
         super(params);
         this.addDisposable(this.SelectedEntity.subscribe((data) => {
             this.loadData(data);
+        }));
+        this.addDisposable(this.SelectedBookmark.subscribe((bookmark) => {
+            this.viewer.EnableBookmark(bookmark);
         }));
     }
 
@@ -65,11 +68,8 @@ export class AppTestEntityData extends AbstractComponent<IAppTestEntityDataParam
         const viewer = this.viewer;
         await viewer.LoadProjectView(TEST_VIEW_ID);
         const bookmarks = await viewer.projectView.GetBookmarks(viewer.GetAPIInstance());
-        const bookmark = bookmarks.find(b => b.ID === TEST_BOOKMARK_ID);
-        if (bookmark) {
-            viewer.projectView.Settings.BookmarkTransitionSpeed = 0;
-            viewer.EnableBookmark(bookmark);
-        }
+        this.Bookmarks(bookmarks);
+        this.SelectedBookmark(bookmarks.length ? bookmarks[0] : null);
     }
 
     private listenSelection(): void {
@@ -78,10 +78,10 @@ export class AppTestEntityData extends AbstractComponent<IAppTestEntityDataParam
         events.ClickEvent.Subscribe((data) => {
             const pos = <Cesium.Cartesian2>data.position;
             if (CesiumUtils.Validate2DPosition(pos)) {
-                if (this.SelectedEntity()) {
+                if (this.SelectedEntity()?.bruceMeta) {
                     viewer.visualRegister.Unhighlight(this.SelectedEntity().bruceMeta)
-                    this.SelectedEntity(null);
                 }
+                this.SelectedEntity(null);
                 const entities = viewer.DigEntitiesFromMouse(pos, 1);
                 const entity = entities.length ? entities[0] : null;
                 if (entity) {
