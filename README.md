@@ -43,6 +43,7 @@ After installing the extension, right-click on the index.html file in the public
 ## Documentation Index
 
 - [**Knockout tips and trips**](./docs/knockout.md)
+- [**Knockout components**](./docs/components.md)
 - [**Test - Render Entity Data**](./src/scripts/test/test-entity-data/README.md)
 
 <br>

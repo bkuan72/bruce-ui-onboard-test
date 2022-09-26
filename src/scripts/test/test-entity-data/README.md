@@ -20,10 +20,8 @@ The entity type not only describes how the data should be layed out, but also wh
 An attribute can be:
 
 - Marked to be a certain type, for example a "string" or "integer".
-
 - Marked to be "important".
   - This means "show me this data when presenting a dialog, hide the rest unless something is clicked to reveal it".
-
 - Marked to be "indexed".
   - This means this attribute can be used as part of a search criteria.
 
