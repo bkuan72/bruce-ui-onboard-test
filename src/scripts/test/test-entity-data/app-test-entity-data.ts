@@ -79,7 +79,7 @@ export class AppTestEntityData extends AbstractComponent<IAppTestEntityDataParam
             const pos = <Cesium.Cartesian2>data.position;
             if (CesiumUtils.Validate2DPosition(pos)) {
                 if (this.SelectedEntity()?.bruceMeta) {
-                    viewer.visualRegister.Unhighlight(this.SelectedEntity().bruceMeta)
+                    viewer.visualRegister.Unhighlight(this.SelectedEntity().bruceMeta);
                 }
                 this.SelectedEntity(null);
                 const entities = viewer.DigEntitiesFromMouse(pos, 1);
@@ -94,21 +94,20 @@ export class AppTestEntityData extends AbstractComponent<IAppTestEntityDataParam
     }
 
     private async loadData(entity: CesiumBruceEntity): Promise<void> {
+        this.SelectedData(null);
         const api = this.viewer.GetAPIInstance();
         const entityId = entity?.bruceMeta.EntityID() ?? null;
         const record = entityId ? await BruceInfo.GetById(api, entityId) : null;
         const type = record ? await EntityType.GetByID(api, record.Bruce["EntityType.ID"]) : null;
         const name = await record?.CalculateName(api);
         const attachments = await EntityAttachment.GetByEntityID(api, entityId);
-        attachments.sort((a, b) => {
-            return a.DisplayOrder - b.DisplayOrder;
-        });
+        attachments.sort((a, b) => a.DisplayOrder - b.DisplayOrder);
         const defaultPhoto = attachments.find(x => x["EntityAttachmentType.ID"] == "photo");
         this.SelectedData({
             record: record,
             type: type,
             photoUrl: defaultPhoto?.ClientFile.getDownloadURL(api),
             name: name
-        })
+        });
     }
 }
