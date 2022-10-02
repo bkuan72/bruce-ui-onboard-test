@@ -7,22 +7,24 @@
                 value: $component.SelectedBookmark,
                 optionsText: 'Title'">
         </select>
+        
     </div>
 
     <!-- ko if: $component.SelectedEntity() -->
         <div class="entity-details">
             <!-- ko if: $component.SelectedData() -->
                 <!-- ko if: $component.SelectedData().record -->
-                    <h2>
+                    <!-- <h2>
                         <span data-bind="text: $component.SelectedData().name"></span>
                         <div>|</div>
                         <span data-bind="text: $component.SelectedData().type.Name ?? $component.SelectedData().type.ID"></span>
-                    </h2>
+                    </h2> -->
                     <!-- ko if: $component.SelectedData().photoUrl -->
-                        <div class="photo" data-bind="style: { 'background-image': 'url(' + $component.SelectedData().photoUrl + ')' }"></div>
+                        <!-- <div class="photo" data-bind="style: { 'background-image': 'url(' + $component.SelectedData().photoUrl + ')' }"></div> -->
                     <!-- /ko -->
-                    <small>(raw entity data)</small>
-                    <textarea readonly data-bind="value: JSON.stringify($component.SelectedData().record.JSON, null, 2)"></textarea>
+                    <!-- <small>(raw entity data)</small> -->
+                    <!-- <textarea readonly data-bind="value: JSON.stringify($component.SelectedData().type.JSON, null, 2)"></textarea> -->
+                    <app-test-entity-viewer params="type: $component.SelectedData().type"></app-test-entity-viewer>
                 <!-- /ko -->
 
                 <!-- ko if: !$component.SelectedData().record -->

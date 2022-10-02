@@ -109,5 +109,6 @@ export class AppTestEntityData extends AbstractComponent<IAppTestEntityDataParam
             photoUrl: defaultPhoto?.ClientFile.getDownloadURL(api),
             name: name
         });
+        console.log(type);
     }
 }
