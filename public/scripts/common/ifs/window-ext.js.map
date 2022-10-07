@@ -1,0 +1,1 @@
+{"version":3,"sources":["scripts/common/ifs/window-ext.ts"],"names":[],"mappings":"","file":"window-ext.js","sourcesContent":["import * as BruceMaps from \"bruce-maps-widget\";\nimport * as Cesium from \"cesium\";\n\nexport interface IWindowExtended extends Window {\n    Cesium: typeof Cesium;\n    BruceMaps: typeof BruceMaps;\n}"]}

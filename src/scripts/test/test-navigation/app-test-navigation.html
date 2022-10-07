@@ -1,0 +1,20 @@
+<div id="APP_TEST_FORM_NAVIGATION_VIEWER">
+    <!-- ko if: current().key -->
+        <!-- ko if: showTrace() -->
+        <nav class="panel">
+            <p class="panel-heading">
+                Navigation history
+            </p>
+            <!-- handle recursive navigation data -->
+            <app-test-navigation-item params="entity: $component.current"></app-test-navigation-item>
+        </nav>
+        <a class="edit-button"><span data-bind="click: hideNav">Hide</span></a>
+        <!-- /ko -->
+        <!-- ko if: !showTrace() -->
+        <a class="edit-button show"  data-bind="click: showNav"><span>></span></a>
+        <!-- /ko -->
+    <!-- /ko -->
+
+
+
+</div>

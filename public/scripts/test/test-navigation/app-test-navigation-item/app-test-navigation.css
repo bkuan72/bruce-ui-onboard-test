@@ -1,0 +1,9 @@
+#APP_TEST_FORM_NAVIGATION_VIEWER .panel-heading {
+  font-size: 16px;
+  color: #deffff;
+  background: rgba(43, 44, 47, 0.6);
+  margin-bottom: 0px;
+}
+#APP_TEST_FORM_NAVIGATION_VIEWER .panel-block {
+  color: #deffff;
+}

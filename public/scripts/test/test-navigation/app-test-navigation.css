@@ -1,0 +1,22 @@
+#APP_TEST_FORM_NAVIGATION_VIEWER[_scope_1665107311534_5] [_scope_1665107311534_5].panel-heading {
+  font-size: 16px;
+  color: #deffff;
+  background: rgba(43, 44, 47, 0.6);
+  margin-bottom: 0px;
+}
+#APP_TEST_FORM_NAVIGATION_VIEWER[_scope_1665107311534_5] [_scope_1665107311534_5].panel:not(:last-child) {
+  margin-bottom: 0px;
+}
+#APP_TEST_FORM_NAVIGATION_VIEWER[_scope_1665107311534_5] [_scope_1665107311534_5].edit-button {
+  text-align: right;
+  padding: 8px 10px;
+  color: #deffff;
+  width: 100%;
+  display: block;
+  font-size: 12px;
+}
+#APP_TEST_FORM_NAVIGATION_VIEWER[_scope_1665107311534_5] [_scope_1665107311534_5].edit-button.show {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}

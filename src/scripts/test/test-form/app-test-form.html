@@ -1,0 +1,19 @@
+<div id="APP_TEST_FORM_VIEWER">
+    
+    <div class="search-bar">
+        <p class="control has-icons-left">
+            <input  data-bind="value:searchInput,valueUpdate:'keyup'"class="input" type="text" placeholder="Search" >
+            <span class="icon is-left">
+                <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+        </p>
+    </div>
+<form class="form-container" data-bind="submit: submitForm">
+    <app-test-form-item params="value: $component.value, uiSchema: $component.uiSchema"></app-test-form-item>
+    <div class="control">
+        <button class="button  is-small">Save</button>
+        <button class="button is-small"  data-bind="click: handleCancel">Cancel</button>
+    </div>
+</form>
+
+</div>

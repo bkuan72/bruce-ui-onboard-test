@@ -1,3 +1,4 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 #APP_TEST_ENTITY_DATA_VIEWER {
     position: relative;
     overflow: hidden;
@@ -5,18 +6,61 @@
     height: 50vh;
     flex-grow: 1;
     flex-shrink: 1;
-
+    app-test-form {
+        width: 100%;
+    }
+    .card{
+        min-width: 200px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 400;
+        background: rgba(43,44,47,0.6);
+        border:1px solid #2b2c2f;  
+        min-height: 100px;
+    }
+    
+    .modal.is-active {
+        position: absolute;
+        width: 400px;
+        background: rgba(43,44,47,0.6);
+        left: auto;
+        right: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        box-shadow: -10px 2px 23px -5px rgba(0,0,0,0.92);
+        -webkit-box-shadow: -10px 2px 23px -5px rgba(0,0,0,0.92);
+        -moz-box-shadow: -10px 2px 23px -5px rgba(0,0,0,0.92);
+    }
+    .modal.is-active.navigation {
+        left:4px;
+        width: fit-content;
+        height: fit-content;
+        position: absolute;
+        top: 100px;
+   
+    }
+    .photo {
+        width: 400px;
+        height: 250px;
+        object-fit: cover;
+        >img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
     >.entity-details {
         position: absolute;
         z-index: 1;
         top: 5px;
         right: 5px;
-        display: flex;
-        flex-direction: column;
+        // display: flex;
+        // flex-direction: column;
         border-radius: 3px;
         background-color: white;
         padding: 8px;
-        text-align: center;
+        // text-align: center;
         width: 500px;
         max-height: 80vh;
 
@@ -66,5 +110,22 @@
             margin-right: 8px;
             font-size: 15px;
         }
+    }
+    .img-place-holder{
+        height: 50px;
+    }
+    .loading-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        > .button.is-loading {
+            border-color: transparent;
+            background-color: transparent;
+        }
+    }
+    app-test-form {
+        overflow: auto;
     }
 }

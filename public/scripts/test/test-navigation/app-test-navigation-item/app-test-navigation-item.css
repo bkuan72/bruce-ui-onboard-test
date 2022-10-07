@@ -1,0 +1,10 @@
+#APP_TEST_FORM_NAVIGATION_ITEM_VIEWER[_scope_1665107311529_8] [_scope_1665107311529_8].panel-block {
+  color: #deffff;
+  border-bottom: 1px solid rgba(127, 128, 128, 0.5);
+}
+#APP_TEST_FORM_NAVIGATION_ITEM_VIEWER[_scope_1665107311529_8] [_scope_1665107311529_8].panel-block:nth-last-child(1) {
+  border-bottom: none;
+}
+#APP_TEST_FORM_NAVIGATION_ITEM_VIEWER[_scope_1665107311529_8] [_scope_1665107311529_8].panel-block:hover {
+  background-color: rgba(127, 128, 128, 0.5);
+}

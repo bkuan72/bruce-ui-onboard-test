@@ -1,0 +1,74 @@
+<div id="APP_TEST_ENTITY_DATA_VIEWER" _scope_1665107311534_3>
+    <div class="bookmark-row" _scope_1665107311534_3>
+        <label _scope_1665107311534_3>Rendered Data</label>
+        <select data-bind="
+                options: $component.Bookmarks,
+                value: $component.SelectedBookmark,
+                optionsText: 'Title'" _scope_1665107311534_3>
+        </select>
+    </div>
+
+
+    <!-- ko if: $component.SelectedEntity() &&  $component.DialogVisible() -->
+
+    <div class="modal is-active" _scope_1665107311534_3>
+        <!-- ko if: $component.SelectedData() -->
+
+        <!-- ko if: $component.SelectedData().record -->
+
+        <!-- ko if: $component.SelectedData().photoUrl -->
+        <div class="photo" _scope_1665107311534_3>
+            <img data-bind="attr: {src: $component.SelectedData().photoUrl}" _scope_1665107311534_3>
+        </div>
+        <!-- /ko -->
+        <!-- ko if: !$component.SelectedData().photoUrl -->
+        <div class="img-place-holder" _scope_1665107311534_3></div>
+        <!-- /ko -->
+        
+        <!-- /ko -->
+            <app-test-form params="value:$component.SelectedData(),uiSchema:$component.uiSchema" _scope_1665107311534_3>
+            </app-test-form>
+            <!-- ko if: !$component.SelectedData().record -->
+            <!-- <div>No data found...</div> -->
+            <!-- /ko -->
+        <!-- /ko -->
+
+        <!-- ko if: !$component.SelectedData() -->
+        <div class="loading-container" _scope_1665107311534_3>
+            <button class="button is-loading is-large" _scope_1665107311534_3>Loading</button>
+        </div>
+        <!-- /ko -->
+    </div>
+
+    <!-- /ko -->
+
+
+
+    <!-- ko if: $component.SelectedEntity() && $component.TooltipVisible() -->
+    <div class="card" data-bind="
+            style:{ 
+                left:$component.TooltipPos().x + 'px',
+                top:$component.TooltipPos().y + 'px'
+            }" _scope_1665107311534_3>
+
+        <div _scope_1665107311534_3>
+            <div class="content" _scope_1665107311534_3>
+                <!-- ko if: $component.SelectedData() -->
+                <app-test-tooltip params="value:$component.SelectedData(),uiSchema:$component.uiSchema" _scope_1665107311534_3>
+                </app-test-tooltip>
+                <!-- /ko -->
+            </div>
+        </div>
+
+    </div>
+    <!-- /ko -->
+
+    <div class="modal is-active navigation" _scope_1665107311534_3>
+        <app-test-navigation _scope_1665107311534_3>
+        </app-test-navigation>
+    </div>
+
+
+
+
+</div>

@@ -1,0 +1,18 @@
+<div id="APP_TEST_FORM_NAVIGATION_ITEM_VIEWER" _scope_1665107311529_8>
+     <!-- ko if: entity().key -->
+    <a class="panel-block" data-bind="click: navigationClick" _scope_1665107311529_8>
+ 
+        <!-- ko if: $component.entity().value.bruceInfo.JSON.Name -->
+        <div data-bind="text:$component.entity().value.bruceInfo.JSON.Name" _scope_1665107311529_8></div>
+        <!-- /ko -->
+        <!-- ko if: $component.entity().value.bruceInfo.JSON.Address -->
+        <div data-bind="text:$component.entity().value.bruceInfo.JSON.Address" _scope_1665107311529_8></div>
+        <!-- /ko -->
+    </a>
+    <!-- /ko -->
+    <!-- ko if: entity().next -->
+    <app-test-navigation-item params="entity: $component.entity().next" _scope_1665107311529_8></app-test-navigation-item>
+    <!-- /ko -->
+
+
+</div>

@@ -8,10 +8,11 @@ export interface IAppShellComponentParams extends IAbstractComponentParams {
 }
 
 enum ETest {
-    RenderEntityData = "app-test-entity-data"
+    RenderEntityData = "app-test-entity-data",
 }
 
 @Component({ name: "app-shell", template: html })
 export class AppShell extends AbstractComponent<IAppShellComponentParams> {
     public Test: KnockoutObservable<string> = ko.observable(ETest.RenderEntityData);
+
 }

@@ -1,0 +1,20 @@
+<div id="APP_TEST_FORM_NAVIGATION_VIEWER" _scope_1665107311534_5>
+    <!-- ko if: current().key -->
+        <!-- ko if: showTrace() -->
+        <nav class="panel" _scope_1665107311534_5>
+            <p class="panel-heading" _scope_1665107311534_5>
+                Navigation history
+            </p>
+            <!-- handle recursive navigation data -->
+            <app-test-navigation-item params="entity: $component.current" _scope_1665107311534_5></app-test-navigation-item>
+        </nav>
+        <a class="edit-button" _scope_1665107311534_5><span data-bind="click: hideNav" _scope_1665107311534_5>Hide</span></a>
+        <!-- /ko -->
+        <!-- ko if: !showTrace() -->
+        <a class="edit-button show" data-bind="click: showNav" _scope_1665107311534_5><span _scope_1665107311534_5>></span></a>
+        <!-- /ko -->
+    <!-- /ko -->
+
+
+
+</div>

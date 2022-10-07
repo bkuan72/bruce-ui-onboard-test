@@ -1,0 +1,39 @@
+#APP_TEST_TOOLTIP_VIEWER{
+    .menu-list-item {
+        font-size: 14px;
+        border-bottom: 1px solid rgba(127,128,128,0.5);
+        padding: 6px 10px;
+        transition: 0.25s;
+        display: flex;
+        align-items: center;
+        clear: both;
+        color: #deffff;
+        text-decoration: none;
+        justify-content: space-between;
+        &:hover {
+            background-color: rgba(127,128,128,0.5);
+        }
+        >span {
+            justify-content: center;
+        }
+    }
+    .edit-button{
+        text-align: right;
+        padding: 8px 10px;
+        color: #deffff;
+        width: 100%;
+        display: block;
+        font-size: 12px;
+    }
+    .loading-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        > .button.is-loading {
+            border-color: transparent;
+            background-color: transparent;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<div id="APP_TEST_TOOLTIP_VIEWER">
+  <!-- ko if : $component.MenuDataSchema().length -->
+  <!-- ko foreach: $component.MenuDataSchema -->
+  <!-- ko if: $data.type && $data.dataSchema.IsImportant -->
+  <a class="menu-list-item">
+    <span>
+
+      <span data-bind="text:$data.dataSchema.Name"></span>:
+    </span>
+    
+    <span data-bind="text:$data.defaultValue"></span>
+  </a>
+  <!-- /ko -->
+  <!-- /ko -->
+
+  <a class="edit-button"><span data-bind="click: openDialog">More</span></a>
+  <!-- /ko -->
+  <!-- ko if : !$component.MenuDataSchema().length -->
+  <div class="loading-container">
+      <button class="button   is-loading is-large">Loading</button>
+  </div>
+  <!-- /ko -->
+</div>

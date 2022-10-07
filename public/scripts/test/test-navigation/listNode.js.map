@@ -1,0 +1,1 @@
+{"version":3,"sources":["scripts/test/test-navigation/listNode.ts"],"names":[],"mappings":"","file":"listNode.js","sourcesContent":["interface TraceNode{\r\n    key:string;\r\n    value:string;\r\n    next:TraceNode;\r\n    prev:TraceNode;\r\n}\r\n"]}

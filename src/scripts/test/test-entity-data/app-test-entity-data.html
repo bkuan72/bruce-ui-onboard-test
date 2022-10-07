@@ -1,38 +1,74 @@
 <div id="APP_TEST_ENTITY_DATA_VIEWER">
     <div class="bookmark-row">
         <label>Rendered Data</label>
-        <select 
-            data-bind="
+        <select data-bind="
                 options: $component.Bookmarks,
                 value: $component.SelectedBookmark,
                 optionsText: 'Title'">
         </select>
     </div>
 
-    <!-- ko if: $component.SelectedEntity() -->
-        <div class="entity-details">
-            <!-- ko if: $component.SelectedData() -->
-                <!-- ko if: $component.SelectedData().record -->
-                    <h2>
-                        <span data-bind="text: $component.SelectedData().name"></span>
-                        <div>|</div>
-                        <span data-bind="text: $component.SelectedData().type.Name ?? $component.SelectedData().type.ID"></span>
-                    </h2>
-                    <!-- ko if: $component.SelectedData().photoUrl -->
-                        <div class="photo" data-bind="style: { 'background-image': 'url(' + $component.SelectedData().photoUrl + ')' }"></div>
-                    <!-- /ko -->
-                    <small>(raw entity data)</small>
-                    <textarea readonly data-bind="value: JSON.stringify($component.SelectedData().record.JSON, null, 2)"></textarea>
-                <!-- /ko -->
 
-                <!-- ko if: !$component.SelectedData().record -->
-                    <div>No data found...</div>
-                <!-- /ko -->
-            <!-- /ko -->
+    <!-- ko if: $component.SelectedEntity() &&  $component.DialogVisible() -->
 
-            <!-- ko if: !$component.SelectedData() -->
-                <div>Loading...</div>
-            <!-- /ko -->
+    <div class="modal is-active">
+        <!-- ko if: $component.SelectedData() -->
+
+        <!-- ko if: $component.SelectedData().record -->
+
+        <!-- ko if: $component.SelectedData().photoUrl -->
+        <div class="photo">
+            <img data-bind="attr: {src: $component.SelectedData().photoUrl}" />
         </div>
+        <!-- /ko -->
+        <!-- ko if: !$component.SelectedData().photoUrl -->
+        <div class="img-place-holder"></div>
+        <!-- /ko -->
+        
+        <!-- /ko -->
+            <app-test-form params="value:$component.SelectedData(),uiSchema:$component.uiSchema">
+            </app-test-form>
+            <!-- ko if: !$component.SelectedData().record -->
+            <!-- <div>No data found...</div> -->
+            <!-- /ko -->
+        <!-- /ko -->
+
+        <!-- ko if: !$component.SelectedData() -->
+        <div class="loading-container">
+            <button class="button is-loading is-large">Loading</button>
+        </div>
+        <!-- /ko -->
+    </div>
+
     <!-- /ko -->
+
+
+
+    <!-- ko if: $component.SelectedEntity() && $component.TooltipVisible() -->
+    <div class="card" data-bind="
+            style:{ 
+                left:$component.TooltipPos().x + 'px',
+                top:$component.TooltipPos().y + 'px'
+            }">
+
+        <div>
+            <div class="content">
+                <!-- ko if: $component.SelectedData() -->
+                <app-test-tooltip params="value:$component.SelectedData(),uiSchema:$component.uiSchema">
+                </app-test-tooltip>
+                <!-- /ko -->
+            </div>
+        </div>
+
+    </div>
+    <!-- /ko -->
+
+    <div class="modal is-active navigation">
+        <app-test-navigation>
+        </app-test-navigation>
+    </div>
+
+
+
+
 </div>

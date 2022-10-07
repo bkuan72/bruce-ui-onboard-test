@@ -1,0 +1,119 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  height: 50vh;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] app-test-form[_scope_1665107311534_3] {
+  width: 100%;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] [_scope_1665107311534_3].card {
+  min-width: 200px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 400;
+  background: rgba(43, 44, 47, 0.6);
+  border: 1px solid #2b2c2f;
+  min-height: 100px;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] [_scope_1665107311534_3].modal.is-active {
+  position: absolute;
+  width: 400px;
+  background: rgba(43, 44, 47, 0.6);
+  left: auto;
+  right: 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-shadow: -10px 2px 23px -5px rgba(0, 0, 0, 0.92);
+  -webkit-box-shadow: -10px 2px 23px -5px rgba(0, 0, 0, 0.92);
+  -moz-box-shadow: -10px 2px 23px -5px rgba(0, 0, 0, 0.92);
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] [_scope_1665107311534_3].modal.is-active.navigation {
+  left: 4px;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 100px;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] [_scope_1665107311534_3].photo {
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] [_scope_1665107311534_3].photo > img[_scope_1665107311534_3] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] > [_scope_1665107311534_3].entity-details {
+  position: absolute;
+  z-index: 1;
+  top: 5px;
+  right: 5px;
+  border-radius: 3px;
+  background-color: white;
+  padding: 8px;
+  width: 500px;
+  max-height: 80vh;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] > [_scope_1665107311534_3].entity-details > h2[_scope_1665107311534_3] {
+  display: flex;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] > [_scope_1665107311534_3].entity-details > h2[_scope_1665107311534_3] > span[_scope_1665107311534_3] {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 10px;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] > [_scope_1665107311534_3].entity-details > [_scope_1665107311534_3].photo {
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] > [_scope_1665107311534_3].entity-details > textarea[_scope_1665107311534_3] {
+  height: 400px;
+  resize: vertical;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] > [_scope_1665107311534_3].entity-details > small[_scope_1665107311534_3] {
+  margin-top: 8px;
+  text-align: left;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] > [_scope_1665107311534_3].bookmark-row {
+  position: absolute;
+  z-index: 1;
+  bottom: 5px;
+  left: 5px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 5px;
+  border-radius: 3px;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] > [_scope_1665107311534_3].bookmark-row > label[_scope_1665107311534_3] {
+  margin-right: 8px;
+  font-size: 15px;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] [_scope_1665107311534_3].img-place-holder {
+  height: 50px;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] [_scope_1665107311534_3].loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] [_scope_1665107311534_3].loading-container > [_scope_1665107311534_3].button.is-loading {
+  border-color: transparent;
+  background-color: transparent;
+}
+#APP_TEST_ENTITY_DATA_VIEWER[_scope_1665107311534_3] app-test-form[_scope_1665107311534_3] {
+  overflow: auto;
+}

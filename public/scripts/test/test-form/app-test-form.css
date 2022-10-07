@@ -1,0 +1,28 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+#APP_TEST_FORM_VIEWER[_scope_1665107311534_4] {
+  width: 100%;
+}
+#APP_TEST_FORM_VIEWER[_scope_1665107311534_4] [_scope_1665107311534_4].form-container {
+  width: 100%;
+  padding: 24px 12px;
+  overflow: auto;
+}
+#APP_TEST_FORM_VIEWER[_scope_1665107311534_4] [_scope_1665107311534_4].form-container > [_scope_1665107311534_4].control {
+  margin-top: 20px;
+  text-align: center;
+}
+#APP_TEST_FORM_VIEWER[_scope_1665107311534_4] [_scope_1665107311534_4].form-container > [_scope_1665107311534_4].control [_scope_1665107311534_4].button:nth-child(1) {
+  margin-right: 12px;
+}
+#APP_TEST_FORM_VIEWER[_scope_1665107311534_4] [_scope_1665107311534_4].search-bar {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding: 0 1rem;
+  background-color: rgba(0, 0, 0, 0);
+}
+#APP_TEST_FORM_VIEWER[_scope_1665107311534_4] [_scope_1665107311534_4].search-bar [_scope_1665107311534_4].search-input {
+  width: 100%;
+}

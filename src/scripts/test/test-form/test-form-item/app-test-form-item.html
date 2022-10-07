@@ -1,0 +1,50 @@
+<div id="APP_TEST_FORM_ITEM_VIEWER">
+
+     <!-- ko if : FormDataSchema().length -->
+    
+        <!-- ko foreach:FormDataSchema -->
+            <!-- ko if: $data.dataSchema -->
+                <!-- ko if: $data.dataSchema.Name -->
+                    <div  class="field block">
+                        <label class="label" data-bind="text: $data.dataSchema.Name"></label>
+                        <!-- render different things based on type -->
+    
+                        <!-- ko if: $data.type == 'textarea' -->
+                        <textarea class="textarea" data-bind="value:$data.defaultValue,attr:{name:$data.key},valueUpdate:'keyup'"></textarea>
+                        <!-- /ko -->
+    
+                        <!-- ko if: $data.type == 'uischema' -->
+                    
+                            <app-test-form-item params="value:$component.value(),uiSchema:$data.schema"></app-test-form-item>
+                        
+                        <!-- /ko -->
+                        
+    
+                        <!-- ko if: $data.type == 'input' -->
+    
+                        <!-- ko if: $data.dataSchema.Type == 'Double' -->
+                        <input class="input is-small"  type="text"  data-bind="value:$data.defaultValue,attr:{name:$data.key},valueUpdate:'keyup'">
+                        <!-- /ko -->
+                        <!-- ko if: $data.dataSchema.Type !== 'Double' -->
+                        <input class="input is-small" type="text" data-bind="value: $data.defaultValue,attr:{name:$data.key},valueUpdate:'keyup'">
+                        <!-- /ko -->
+                    
+                        <!-- /ko -->
+    
+                        <!-- ko if: $data.type == 'select' -->
+                        <div class="select is-small">
+                            <select data-bind="options: $data.options, value: $data.defaultValue,attr:{name:$data.key}"></select>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                <!-- /ko -->
+            <!-- /ko -->
+    
+    
+        <!-- /ko -->
+       
+    <!-- /ko -->
+    
+
+    
+</div>

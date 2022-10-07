@@ -22,7 +22,7 @@
     "@types/knockout": "^3.4.64",
     "@types/node": "^8.0.0",
     "bruce-maps-widget": "^3.9.9",
-    "cesium": "^1.86.1",
+    "cesium": "^1.93.0",
     "del": "^4.0.0",
     "delete-empty": "^2.0.0",
     "gulp": "^4.0.0",
@@ -44,6 +44,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
+    "bulma": "^0.9.4",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-typescript": "^0.14.0",
     "tslint": "^5.20.1",
