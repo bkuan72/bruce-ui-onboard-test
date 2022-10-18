@@ -1,0 +1,40 @@
+<div id="APP_TEST_ENTITY_DATA_VIEWER">
+    <div class="bookmark-row">
+        <label>Rendered Data</label>
+        <select 
+            data-bind="
+                options: $component.Bookmarks,
+                value: $component.SelectedBookmark,
+                optionsText: 'Title'">
+        </select>
+    </div>
+
+    <!-- ko if: $component.SelectedEntity() -->
+        <div class="entity-details">
+            <!-- ko if: $component.SelectedData() -->
+                <!-- ko if: $component.SelectedData().record -->
+
+                    <app-title-component data-bind="value: $component.TitleData()"></app-title-component>
+                    <!-- ko if: $component.SelectedData().photoUrl -->
+                        <div class="photo" data-bind="style: { 'background-image': 'url(' + $component.SelectedData().photoUrl + ')'}"></div>
+                    <!-- /ko -->
+                    <ul>
+                    <!-- ko foreach: $component.branches -->
+                    <li>
+                        <app-detail-component data-bind="value: $data"></app-detail-component>
+                    </li>
+                    <!-- /ko -->
+                    </ul>
+                <!-- /ko -->
+
+                <!-- ko if: !$component.SelectedData().record -->
+                    <div>No data found...</div>
+                <!-- /ko -->
+            <!-- /ko -->
+
+            <!-- ko if: !$component.SelectedData() -->
+                <div>Loading...</div>
+            <!-- /ko -->
+        </div>
+    <!-- /ko -->
+</div>

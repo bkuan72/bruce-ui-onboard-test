@@ -1,0 +1,72 @@
+#APP_TEST_ENTITY_DATA_VIEWER {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    height: 50vh;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    >.entity-details {
+        position: absolute;
+        z-index: 1;
+        top: 5px;
+        right: 5px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 3px;
+        background-color: white;
+        padding: 8px;
+        text-align: center;
+        width: 500px;
+        max-height: 80vh;
+        overflow: auto;
+        resize: both;
+
+        >h2 {
+            display: flex;
+
+            >span {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                flex-grow: 1;
+                flex-shrink: 0;
+                width: 10px;
+            }
+        }
+
+        >.photo {
+            height: 200px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+        }
+
+        >textarea {
+            height: 400px;
+            resize: vertical;
+        }
+
+        >small {
+            margin-top: 8px;
+            text-align: left;
+        }
+    }
+
+    >.bookmark-row {
+        position: absolute;
+        z-index: 1;
+        bottom: 5px;
+        left: 5px;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        padding: 5px;
+        border-radius: 3px;
+        
+        >label {
+            margin-right: 8px;
+            font-size: 15px;
+        }
+    }
+}
