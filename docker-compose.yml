@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  bruce-ui-onboard-test:
+    # container_name: ls10_net_web-application
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    stdin_open: true
+    tty: true
+    ports:
+      - "8082:8082"
+    # depends_on:
+    #   - ls10_net_server_application
+    # volumes:
+    #    - ./../../ls10_net_web:/usr/src/app/ls10_net_web
+    #    - /usr/src/app/ls10_net_web/node_modules
