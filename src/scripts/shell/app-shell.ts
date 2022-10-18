@@ -8,7 +8,7 @@ export interface IAppShellComponentParams extends IAbstractComponentParams {
 }
 
 enum ETest {
-    RenderEntityData = "app-test-entity-data"
+    RenderEntityData = "app-entity-detail-component"
 }
 
 @Component({ name: "app-shell", template: html })
