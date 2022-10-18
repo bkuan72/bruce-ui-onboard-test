@@ -1,0 +1,7 @@
+<!-- ko if: $component.value-->
+<div class="text" data-bind="text: $component.value">
+</div>
+<!-- /ko -->
+<!-- ko if: $component.photoUrl -->
+<div class="photo" data-bind="style: { 'background-image': 'url(' + $component.photoUrl + ')' }"></div>
+<!-- /ko -->
