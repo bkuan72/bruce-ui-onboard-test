@@ -1,0 +1,31 @@
+<!-- A -->
+<table>
+    <tr>
+        <!-- ko foreach: $component.hdrTabs -->
+        <th><span data-bind="text: $data"></span></th>
+        <!-- /ko -->
+        <th><app-label-component data-bind="value: $component.BranchLabel()"></app-label-component></th>
+        <th><app-value-component data-bind="value: $component.BranchValue()"></app-value-component></th>
+        <!-- ko if: $component.hdrTrailingTabs.length > 0 -->
+            <!-- ko foreach: $component.hdrTrailingTabs -->
+            <th><span data-bind="text: $data"></span></th>
+            <!-- /ko -->
+        <!-- /ko -->
+    </tr>
+<!-- ko if: $component.branch && $component.branch.leafSchemas && $component.branch.leafSchemas.length > 0 -->
+    <!-- ko foreach: $component.branch.leafSchemas -->
+    <tr>
+        <!-- ko foreach: {data: $component.tabs, as: 'tab'} -->
+        <td><span data-bind="text: tab"></span></td>
+        <!-- /ko -->
+        <td><app-label-component data-bind="value: $component.LeafLabel($data.Key)"></app-label-component></td>
+        <td><app-value-component data-bind="value: $component.LeafValue($data.Key)"></app-value-component></td>
+        <!-- ko if: $component.trailingTabs.length > 0 -->
+            <!-- ko foreach: {data: $component.trailingTabs, as: 'tTab'} -->
+            <td><span data-bind="text: tTab"></span></td>
+            <!-- /ko -->
+        <!-- /ko -->
+    </tr>
+    <!-- /ko -->
+<!-- /ko -->
+</table>
