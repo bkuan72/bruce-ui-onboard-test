@@ -1,0 +1,1 @@
+{"version":"1.0.0","name":"bruce-components","dependencies":{"@typescript-eslint/eslint-plugin":{"version":"5.38.0"},"@typescript-eslint/parser":{"version":"5.38.0"},"eslint-config-google":{"version":"0.14.0"},"eslint-plugin-typescript":{"version":"0.14.0"},"tslint-config-standard":{"version":"9.0.0"},"tslint":{"version":"5.20.1"}}}

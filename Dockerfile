@@ -13,5 +13,5 @@ RUN gulp build-dev
 FROM nginx
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=build-step /app/bruce-ui-onboard-test/public /usr/share/nginx/html/
-EXPOSE 8082
+EXPOSE 8080
 
